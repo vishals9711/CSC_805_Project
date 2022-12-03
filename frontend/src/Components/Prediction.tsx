@@ -5,7 +5,7 @@ import { PREDICTION_FEATURES } from './constants';
 
 const Prediction = (): React.ReactElement => {
   const [inputValues, setInputValues] = React.useState({} as { [key: string]: string });
-  const [prediction, setPrediction] = React.useState<null | number>(null);
+  const [prediction, setPrediction] = React.useState<null | string>(null);
 
   const handleGetPrediction = () => {
     setPrediction(null);
@@ -43,7 +43,7 @@ const Prediction = (): React.ReactElement => {
           {prediction === null ? (
             <Skeleton active round />
           ) : (
-            <Statistic title='Prediction' value={prediction} precision={2} valueStyle={{ color: '#3f8600' }} />
+            <Statistic title='Prediction' value={prediction} precision={2} valueStyle={{ color: prediction === "Malignant" ? '#ce1414': '#3f8600' }} />
           )}
         </Card>
       </Col>

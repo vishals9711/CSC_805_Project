@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import { getCharts } from '../services/cancerAPI';
 import { FEATURES } from './constants';
 import { Card } from 'antd';
+import { Typography } from 'antd';
+
+const { Title } = Typography;
 
 const { Meta } = Card;
 
@@ -45,7 +48,7 @@ const Visualization = (): React.ReactElement => {
     );
   };
 
-  const checkIfValid = () => !(selectedFeatures.length === 10 && selectedCharts.length === 2);
+  const checkIfValid = () => !(selectedFeatures.length > 0 && selectedCharts.length > 0);
 
   return (
     <Row gutter={[16, 16]} justify={'center'}>
@@ -72,6 +75,9 @@ const Visualization = (): React.ReactElement => {
             </Option>
           ))}
         </Select>
+      </Col>
+      <Col span={24}>
+        <Title level={5}>* For Joint Plot, only first 2 features will be selected.</Title>
       </Col>
 
       <Col className='gutter-row' span={24}>

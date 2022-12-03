@@ -24,23 +24,16 @@ def get_charts():
     features = request_data['features']
     chart_types = request_data['chartTypes']
     return_obj = {}
-    print(features)
-    print(chart_types)
     for chart in chart_types:
         if(chart == 'Violin Plot'):
-            print(chart)
             return_obj[chart] = breastCancerInterface.get_violion_plot(features)
         if(chart == 'Box Plot'):
-            print(chart)            
             return_obj[chart] = breastCancerInterface.get_box_plot(features)
         if(chart == 'Joint Plot'):
-            print(chart)
             return_obj[chart] = breastCancerInterface.get_joint_plot(features)
         if(chart == 'Swarm Plot'):
-            print(chart)
             return_obj[chart] = breastCancerInterface.get_swarm_plot(features)
         if(chart == 'HeatMap'):
-            print(chart)
             return_obj[chart] = breastCancerInterface.get_heat_map_plot(features)
     encoded_imges = {}
     for key in return_obj:
@@ -49,10 +42,8 @@ def get_charts():
 
 @app.route("/api/prediction",methods=['POST'])
 def get_prediction():
-    print("Hello")
     request_data = request.get_json()
-    print(request_data)
-    return jsonify(11.28)
+    return jsonify(breastCancerInterface.get_prediction(request_data))
 
 if __name__ == "__main__":
-    app.run(debug=True,threaded=True)
+    app.run(host="127.0.0.1",debug=True,threaded=True)
