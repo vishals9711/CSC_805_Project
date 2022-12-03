@@ -1,9 +1,9 @@
-from flask import Flask,request,jsonify
+from flask import Flask,request,jsonify,render_template
 
 from interface import BreastCancerInterface
 from base64 import encodebytes
 
-app = Flask(__name__)
+app = Flask(__name__,static_folder='./templates',static_url_path='/')
 
 breastCancerInterface = BreastCancerInterface()
 
@@ -11,7 +11,7 @@ chart_types_constant = ['Violin Plot', 'Box Plot', 'Joint Plot', 'Swarm Plot', '
 
 @app.route("/")
 def hello_world():
-    return "<p>Hello, World!</p>"
+    return render_template('index.html')
 
 def get_response_image(byte_arr):
     encoded_img = encodebytes(byte_arr.getvalue()).decode('ascii') # encode as base64

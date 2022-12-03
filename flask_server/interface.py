@@ -37,8 +37,8 @@ class BreastCancerInterface:
         # print(x_test)
         # print(y_test)
 
-        clf1 = xgb.XGBClassifier(random_state = 42)
-        self.clf1 = clf1.fit(x_train, y_train)
+        # clf1 = xgb.XGBClassifier(random_state = 42)
+        # self.clf1 = clf1.fit(x_train, y_train)
     
     def returnIndexofHeader(self,headers):
         returnArr = []
@@ -124,5 +124,5 @@ class BreastCancerInterface:
         return bytes_image
 
     def get_prediction(data):
-        accuracy_score(data, clf1.predict(x_test))
+        # accuracy_score(data, clf1.predict(x_test))
         return 'M'
