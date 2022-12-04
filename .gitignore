@@ -1,3 +1,4 @@
 /**node_modules
-__pycache__
 /flask_server/venv
+flask_server/__pycache__/
+.DS_Store
