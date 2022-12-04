@@ -2,7 +2,7 @@
 # CSC 805 Project
 **Exploring Breast Tumor Data**
 Made By Darshil Dhameliya and Vishal Sharma
-In Fall 2022 at San Francisco State University
+in Fall 2022 at San Francisco State University
 
 # System Architecture
 
