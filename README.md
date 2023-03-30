@@ -1,5 +1,5 @@
 
-# CSC 805 Project
+# Visualization of Breast Cancer Tumor Data
 **Exploring Breast Tumor Data**
 Made By Darshil Dhameliya and Vishal Sharma
 in Fall 2022 at San Francisco State University
