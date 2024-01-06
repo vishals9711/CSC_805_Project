@@ -2,4 +2,3 @@
 /flask_server/venv
 flask_server/__pycache__/
 .DS_Store
-flask_server/templates/*
